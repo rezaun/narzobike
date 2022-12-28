@@ -1,6 +1,7 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({ children }) => {
     return (
         <div className="drawer drawer-end">
             <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
@@ -15,22 +16,48 @@ const Navbar = () => {
                     </div>
 
                     <div className="flex-none hidden lg:block">
-                        <ul className="menu menu-horizontal">
+                        <ul className="menu menu-horizontal gap-x-2">
 
-                            <li><a>Navbar Item 1</a></li>
-                            <li><a>Navbar Item 2</a></li>
+                            <li>
+                                <NavLink to='/' className='rounded-lg'>Home</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='/about' className='rounded-lg'>About Us</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='/portfolio' className='rounded-lg'>Portfolio</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='/contact' className='rounded-lg'>Contact Us</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='/login' className='rounded-lg'>Login</NavLink>
+                            </li>
                         </ul>
                     </div>
                 </div>
 
-                Content
+                {children}
             </div>
             <div className="drawer-side">
                 <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
                 <ul className="menu p-4 w-80 bg-base-100">
 
-                    <li><a>Sidebar Item 1</a></li>
-                    <li><a>Sidebar Item 2</a></li>
+                    <li>
+                        <NavLink to='/' className='rounded-lg'>Home</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/about' className='rounded-lg'>About Us</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/portfolio' className='rounded-lg'>Portfolio</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/contact' className='rounded-lg'>Contact Us</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/login' className='rounded-lg'>Login</NavLink>
+                    </li>
 
                 </ul>
 
