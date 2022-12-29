@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 const Navbar = ({ children }) => {
     const [dark, setDark] = useState(false);
     return (
-        <div className="drawer drawer-end">
+        <div className="drawer drawer-end"  data-theme={dark ? 'light' : 'dark'}>
             <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content flex flex-col">
 
