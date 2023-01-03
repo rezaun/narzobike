@@ -3,7 +3,7 @@ import Home from "./pages/Home/Home";
 import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
 import Login from "./pages/Login";
-import ContactUs from "./pages/ContactUs";
+import Blog from "./pages/Blog";
 import { Route, Routes } from "react-router-dom";
 
 
@@ -15,7 +15,7 @@ function App() {
           <Route path="/" element={<Home />}/>
           <Route path="/about" element={<About />}/>
           <Route path="/portfolio" element={<Portfolio />}/>
-          <Route path="/contact" element={<ContactUs />}/>
+          <Route path="/blog" element={<Blog/>}/>
           <Route path="/login" element={<Login />}/>
         </Routes>
       </Navbar>

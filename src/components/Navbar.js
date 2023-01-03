@@ -9,7 +9,7 @@ const Navbar = ({ children }) => {
             <div className="drawer-content flex flex-col">
 
                 <div className="w-full navbar bg-base-100 shadow-md sticky top-0 z-50 lg:px-20">
-                    <div className="flex-1 px-2 mx-2">NARZO BIKE LTD.</div>
+                    <div className="flex-1 px-2 mx-2"><a href="/">NARZO BIKE LTD.</a></div>
                     <div className="flex-none lg:hidden">
                         <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
@@ -29,7 +29,7 @@ const Navbar = ({ children }) => {
                                 <NavLink to='/portfolio' className='rounded-lg'>Portfolio</NavLink>
                             </li>
                             <li>
-                                <NavLink to='/contact' className='rounded-lg'>Contact Us</NavLink>
+                                <NavLink to='/blog' className='rounded-lg'>Blog</NavLink>
                             </li>
                             <li>
                                 <NavLink to='/login' className='rounded-lg'>Login</NavLink>
