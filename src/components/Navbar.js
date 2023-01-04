@@ -1,8 +1,30 @@
-import React, { useState } from 'react';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { auth } from '../Firebase/Firebase.init';
 
 const Navbar = ({ children }) => {
     const [dark, setDark] = useState(false);
+    const [user, setUser] = useState({});
+
+    useEffect(() =>{
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+             setUser(user)
+             console.log(user);
+            } else {
+                setUser({})
+            }
+          });
+    }, []);
+
+    const handleLogout = () =>{
+        signOut(auth).then(() => {
+            // Sign-out successful.
+          }).catch((error) => {
+            // An error happened.
+          });
+    }
     return (
         <div className="drawer drawer-end"  data-theme={dark ? 'light' : 'dark'}>
             <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
@@ -32,7 +54,12 @@ const Navbar = ({ children }) => {
                                 <NavLink to='/blog' className='rounded-lg'>Blog</NavLink>
                             </li>
                             <li>
-                                <NavLink to='/login' className='rounded-lg'>Login</NavLink>
+                                {user?.displayName ? (<NavLink className='rounded-lg' onClick={handleLogout}>Sign Out</NavLink>):(
+                                    <NavLink to='/login' className='rounded-lg'>Login</NavLink>
+                                ) }
+                            
+                                
+                                
                             </li>
                             <label className="swap swap-rotate">
 

@@ -1,7 +1,25 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { auth } from "../Firebase/Firebase.init";
+
+const provider = new GoogleAuthProvider();
 
 const SignUp = () => {
+    const navigate = useNavigate();
+
+    const googleAuth = () =>{
+        signInWithPopup(auth, provider)
+        .then((result) => {
+            const user = result.user;
+            navigate("/");
+        }).catch((error) => {
+            const errorMessage = error.message;
+            console.log(errorMessage);
+        });
+    }
+    
+
     return (
         <div className='h-screen flex justify-center items-center bg-accent'>
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -34,7 +52,7 @@ const SignUp = () => {
                         Already Member? Please <NavLink to='/login' className="link link-hover"> Login </NavLink> Here
                     </label>
                     <div className="divider">OR</div>
-                    <button className='btn btn-glass hover:btn-accent'>Continue with Google</button>
+                    <button className='btn btn-glass hover:btn-accent' onClick={googleAuth}>Continue with Google</button>
                 </div>
             </div>
 
