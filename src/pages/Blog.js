@@ -22,7 +22,7 @@ const Blog = () => {
                     <p>3. To manage global state, I can use third-party libraries like Zustand, Jotai, and Recoil.</p>
                     <p>4. URL state is quite easy to manage, usually through custom hooks that give us all the information we need about our location, history, and pathname. example: useHistory or useLocation.</p>
                 </div>
-                <div className='my-5'>
+                <div className='my-5'>                                                                                                                                                                                  
                     <h4 className='text-2xl'>03. How does prototypical inheritance work?</h4>
                     <p>JavaScript is a prototype-based, Object Oriented programming language. After the ES6 updates, JavaScript allowed for “prototypal inheritance”, meaning that objects and methods can be shared, extended, and copied. Sharing amid objects makes for easy inheritance of structure (data fields), behavior (functions / methods), and state (data values). JavaScript is the most common of the prototype-capable languages, and its capabilities are relatively unique. When used appropriately, prototypical inheritance in JavaScript is a powerful tool that can save hours of coding.</p>
                 </div>

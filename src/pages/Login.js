@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Login = () => {
     return (
@@ -17,13 +18,14 @@ const Login = () => {
                                 <span className="label-text">Password</span>
                             </label>
                             <input type="text" placeholder="password" className="input input-bordered" />
-                            <label className="label">
-                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                            </label>
+                          
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Login</button>
                         </div>
+                        <label className="">
+                        New in Narzo Bike? Please <NavLink to='/signup' className="link link-hover text-red-500"> Sign Up </NavLink> Here
+                    </label>
                         <div className="divider">OR</div>
                         <button className='btn btn-glass hover:btn-accent'>Continue with Google</button>
                     </div>
