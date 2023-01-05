@@ -6,13 +6,14 @@ import Login from "./pages/Login";
 import Blog from "./pages/Blog";
 import { Route, Routes } from "react-router-dom";
 import SignUp from "./pages/SignUp";
-
+import { Toaster } from 'react-hot-toast';
 
 
 function App() {
   return (
     <>
       <Navbar>
+        <Toaster/>
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="/about" element={<About />}/>
