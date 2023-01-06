@@ -7,6 +7,7 @@ import Blog from "./pages/Blog";
 import { Route, Routes } from "react-router-dom";
 import SignUp from "./pages/SignUp";
 import { Toaster } from 'react-hot-toast';
+import NotFound from "./pages/NotFound";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/blog" element={<Blog/>}/>
           <Route path="/login" element={<Login />}/>
           <Route path="/signup" element={<SignUp />}/>
+          <Route path="*" element={<NotFound/>}/>
         </Routes>
       </Navbar>
 

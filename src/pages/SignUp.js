@@ -57,8 +57,15 @@ const SignUp = () => {
         if(password.value === ""){
             setPassword({value:"", error:"Password is require"});
         }
+        if (confirmPassword.value === "") {
+            setConfirmPassword({
+              value: "",
+              error: "Password confirmation is required",
+            });
+          }
 
-        if(email.value && password.value && confirmPassword === password.value){
+        if(email.value && password.value === confirmPassword.value){
+            
             createUserWithEmailAndPassword(auth, email.value, password.value)
             .then((userCredential) => {
                 const user = userCredential.user;
